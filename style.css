@@ -1,0 +1,113 @@
+/* Réinitialisation des marges et des espacements par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header du site */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style pour le titre du site */
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Sous-titre sous le titre */
+header p {
+    font-size: 1.2em;
+    font-weight: lighter;
+}
+
+/* Style pour le pied de page */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Grille des produits */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;               /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+    justify-content: space-around; /* Espacement entre les éléments */
+    gap: 20px;                     /* Espace entre les éléments */
+    padding: 20px;
+}
+
+/* Style pour chaque produit (coque) */
+.product {
+    flex: 0 1 calc(25% - 20px);    /* Chaque produit prend 25% de la largeur moins l'espace entre eux */
+    box-sizing: border-box;
+    text-align: center;            /* Centrer le texte sous l'image */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease; /* Transition pour un effet de survol */
+}
+
+/* Effet au survol d'un produit */
+.product:hover {
+    transform: scale(1.05);         /* Agrandir légèrement l'image au survol */
+}
+
+/* Style pour l'image de chaque produit */
+.product img {
+    max-width: 100%;                /* L'image prend toute la largeur de son conteneur sans déformation */
+    height: auto;                   /* Maintient les proportions de l'image */
+    border-radius: 8px;
+    margin-bottom: 10px;            /* Un peu d'espace sous l'image */
+}
+
+/* Style du texte sous chaque image (nom et prix) */
+.product h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Style du menu de sélection des modèles */
+select {
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/* Responsivité - pour les écrans plus petits (tablettes, téléphones) */
+@media (max-width: 768px) {
+    .product {
+        flex: 0 1 calc(50% - 20px);  /* Deux produits par ligne sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        flex: 0 1 100%;               /* Un produit par ligne sur les petits écrans (téléphones) */
+    }
+}
